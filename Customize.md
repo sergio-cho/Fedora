@@ -1,32 +1,23 @@
-## Step 1 Budgie Desktop
 
-### Add the repository
 
-sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:/smoku:/budgie-desktop/Fedora_34/home:smoku:budgie-desktop.repo
-
-### Install Desktop
-
-sudo dnf install budgie-desktop
-
-## Step 2 Icons
+## Iconos
 
 sudo dnf install papirus-icon-theme
 
-## Step 3 Ulauncher
 
-sudo dnf install ulauncher
-
-### Ulauncher-theme
-
-Some themes on https://gist.github.com/gornostal/02a232e6e560da7946c053555ced6cce
-Create a dir **User-themes** on .config/ulauncher
-Clone your favorite theme on ~/.config/ulauncher/user-themes
-
-## Step 4 Grub-theme
+## Grub-theme
 
 git clone https://github.com/vinceliuice/grub2-themes.git
-Ejecute .install.sh
+Ejecute sudo .install.sh
 
-## Step 5  terminal theme
+## Terminal theme
 
 https://github.com/ohmybash/oh-my-bash
+
+podemos instalar con wget o curl
+
+### Cambaindo el tema 
+por defecto viene con un tema algo feo para cambiarlo tenemos que hacer lo sig:
+sudo nano ~/.bashrc 
+En la linea marcada como **OSH_THEME="font"** ponemos el tema que mas nos guste en mi caso "powerline"
+
