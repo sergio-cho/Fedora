@@ -1,13 +1,21 @@
 # Fedora
-A short guide to personalize Fedora 
+Una guia para empezar con Fedora
 
-## Step 1 RPM Fusion
-Install RPM Fusion from: https://rpmfusion.org/
+## Habilitar los repositorios de terceros (RPM FUSION)
 
-## Step 2 Acelerar DNF
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-Sudo nano /etc/dnf/dnf.conf
+Sino funsiona accede a:https://rpmfusion.org/Configuration
+
+## Acelerar DNF
+
+sudo nano /etc/dnf/dnf.conf
 
 **Add this:**
+
 max_parallel_downloads=10
+
 fastestmirror=True
+
+## Agregando mas software
+Usaremos la guia rapida de Flathub desde: https://flathub.org/home
