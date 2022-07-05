@@ -4,7 +4,7 @@ BSPWM es un gestor de ventanas muy ligero y personalizable , pudiendo tener escr
 
 ![This is the example](./Previews/bspwm.png)
 
-Primero debemos instalar el gestor de ventanas () y luego el gestor de atajos de teclado (sxhkd).
+Primero debemos instalar el gestor de ventanas (bspwm) y luego el gestor de atajos de teclado (sxhkd).
 
 	sudo dnf install bspwm sxhkd
 
@@ -33,16 +33,13 @@ Tienes que crear las carpetas de configuracion y darles permisos
 	+ picom
 	+ tilix 
 
-Abrimos una terminal en la carpeta Fedora:
-
-	cp .config/bspwm/bspwmrc  ~/.config/bspwm
-	cp .config/sxhkd/sxhkdrc  ~/.config/sxhkd
+Abrimos la aplicacion de archivos y solo arrastramos los archivos a la carpeta de .config
 
 ### Permisos al archivo 
 
 	chmod +x ~/.config/bspwm/bspwmrc 
 
 ## Polybar
-
-polybar es una barra de estado que solo pesa 23 MB , es muy útil y configurable aunque ya hay un repositorio que te da ciertos temas yo estoy utilizando **grayblocks**. Repositorio [aquí](https://github.com/adi1090x/polybar-themes) 
+Es una barra de tareas modular que te permite configurarla a tu gusto y a tu equipo.
+ Repositorio de los modulos [aquí](https://github.com/polybar/polybar/wiki) 
 

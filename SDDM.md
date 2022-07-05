@@ -1,5 +1,5 @@
 # SDDM 
-Sudo dnf install sddm sddm-kcm -y 
+	sudo dnf install sddm sddm-kcm -y 
 
 ## SDDM THEME 
 Clone the theme on /usr/share/sddm/themes

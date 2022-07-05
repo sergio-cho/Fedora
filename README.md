@@ -9,13 +9,12 @@ Sino funciona [entra aqui](https://rpmfusion.org/Configuration)
 
 ## Acelerar DNF
 
-sudo nano /etc/dnf/dnf.conf
+	sudo nano /etc/dnf/dnf.conf
 
 **Add this:**
 
-max_parallel_downloads=10
-
-fastestmirror=True
+	max_parallel_downloads=10
+	fastestmirror=True
 
 ## Agregando mas software
 Usaremos la guia rapida de Flathub desde: https://flathub.org/home
