@@ -22,14 +22,16 @@ super + b
 super + c
 	code 
 
-super + t 
+alt + t 
 	telegram-desktop
 
 super + y
     polybar-msg cmd toggle
 
-super +  shift + s
-	pkill -USR1 -X sxhkd
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
 #################################################################
 #     MULTIMEDIA KEYS
 #################################################################
@@ -42,6 +44,21 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
     amixer set Master 10%-
 
+XF86AudioMute
+	amixer --toggle-mute
+
+#################################################################
+#     BRIGHTNESS KEYS
+#################################################################
+
+XF86MonBrightness{Down,Up}
+	brightnessctl s 5%{-,+}
+	
+#XF86MonBrightnessUp
+#	brightness set 10%{+}
+
+#XF86MonBrightnessDown
+#	brightness set 10{-}
 
 #
 # bspwm hotkeys
