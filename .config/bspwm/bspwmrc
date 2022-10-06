@@ -1,16 +1,27 @@
 #!/usr/bin/sh
 
 sxhkd &
-
-bspc monitor DisplayPort-0 -n monitor0 -d I II III
-bspc monitor HDMI-A-0 -n monitor1 -d IV
+# monitor principal 
+bspc monitor eDP-1 -n integrada -d I II III IV
+# Monitor secundario {xrandr si no sabes cual es cual}
+bspc monitor DisplayPort-0 -n monitor0 -d V
+# seteamos dadisposicion de estos
 bspc monitor HDMI-A-0 -s DisplayPort-0
-bspc config border_width         1
-bspc config window_gap          12
+
+# Ventanas 
+bspc config border_width         5
+bspc config focused_border_color \#C3BBEC
+bspc config normal_border_color \#D9D8E0
+bspc config window_gap          10
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+bspc config top_padding 0
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
@@ -21,6 +32,5 @@ bspc rule -a Screenkey manage=off
 
 # AUTOSTART
 picom &
-ulauncher &
-feh --bg-scale "/home/sergio/Fondos/catalina.jpg" &
-$HOME/.config/polybar/grayblocks/launch.sh &
+feh --bg-scale "/home/sergiomro/Pictures/si.jpg" &
+$HOME/.config/polybar/launch.sh &
