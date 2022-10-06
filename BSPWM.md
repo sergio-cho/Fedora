@@ -31,10 +31,15 @@ Tienes que crear las carpetas de configuracion y darles permisos
 	+ feh
 	+ rofi 
 	+ picom
-	+ tilix 
+	+ tilix
+	+ lxappearance
+	+ brightnessctl
 	+ Esta [fuente](https://zavoloklom.github.io/material-design-iconic-font/)
+#### Todo en un solo comando:
 
-Abrimos la aplicacion de archivos y solo arrastramos los archivos a la carpeta de .config
+	sudo dnf install bspwm sxhkd polybar feh rofi picom tilix lxappearance brightnessctl
+
+Abrimos la aplicacion de archivos y solo arrastramos las carpetas a la carpeta de .config
 
 ### Permisos al archivo 
 
