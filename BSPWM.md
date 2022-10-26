@@ -34,7 +34,7 @@ Tienes que crear las carpetas de configuracion y darles permisos
 	+ tilix
 	+ lxappearance
 	+ brightnessctl
-	+ Esta [fuente](https://zavoloklom.github.io/material-design-iconic-font/)
+	+ flameshot
 #### Todo en un solo comando:
 
 	sudo dnf install bspwm sxhkd polybar feh rofi picom tilix lxappearance brightnessctl
