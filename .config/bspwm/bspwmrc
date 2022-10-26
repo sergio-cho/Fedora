@@ -1,12 +1,24 @@
 #!/usr/bin/sh
 
+#Configs side of monitors BSPWM
+SECOND_MONITOR_SIDE="left"
+
+
+#Get Monitors
+PRINCIPAL=$(xrandr | grep primary | awk '{print $1}')
+SECOND_MONITOR=$(xrandr | grep connected | awk '{i++}i==2'| awk '{print $1}')
 sxhkd &
-# monitor principal 
-bspc monitor eDP-1 -n integrada -d I II III IV
-# Monitor secundario {xrandr si no sabes cual es cual}
-bspc monitor DisplayPort-0 -n monitor0 -d V
-# seteamos dadisposicion de estos
-bspc monitor HDMI-A-0 -s DisplayPort-0
+
+ Configure Monitors 
+if [ "$(xrandr | grep -sw 'connected' | wc -l)" = "2" ]; then
+  bspc monitor $(bspc query -M | sed -n 1p) -d I II III IV V
+  bspc monitor $(bspc query -M | sed -n 2p) -d VI VII VIII IX X
+  #Set Monitors Side and output 
+  xrandr --output $SECOND_MONITOR --$SECOND_MONITOR_SIDE-of $PRINCIPAL  
+else
+  bspc monitor -d I II III IV V VI VII VIII IX X 
+fi
+
 
 # Ventanas 
 bspc config border_width         5
@@ -32,5 +44,7 @@ bspc rule -a Screenkey manage=off
 
 # AUTOSTART
 picom &
-feh --bg-scale "/home/sergiomro/Pictures/si.jpg" &
+pkill dunst &
+dunst -conf ~/.config/dunst/dunstrc &
+feh --bg-scale "/home/daniel/Fondos/img19.jpg" &
 $HOME/.config/polybar/launch.sh &
