@@ -3,9 +3,7 @@ SDIR="$HOME/.config/polybar/scripts"
 # Launch Rofi
 MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 -theme $SDIR/rofi/styles.rasi \
-<<< "♥ blue|♥ cyan|\
-♥ deep-purple|♥ purple\
-♥ blue-dark|♥ cyan-dark\
+<<< "♥ blue-dark|♥ cyan-dark|\
 ♥ deep-purple-dark|♥ purple-dark|")"
             case "$MENU" in
 				## Light Colors

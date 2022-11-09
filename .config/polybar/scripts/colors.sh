@@ -33,9 +33,9 @@ change_color() {
 	polybar-msg cmd restart
 }
 
-if [[$1 = "--blue"]];then
-    SH1="#FF6F00"	SH2="#FF8F00"	SH3="#FFA000"	SH4="#FFB300"
-	SH5="#FFC107"	SH6="#FFCA28"	SH7="#FFD54F"	SH8="#FFE082"
+if  [[ $1 = "--blue" ]]; then
+    	SH1="#0D47A1"	SH2="#1565C0"	SH3="#1976D2"	SH4="#1E88E5"
+	SH5="#2196F3"	SH6="#42A5F5"	SH7="#64B5F6"	SH8="#90CAF9"
 	change_color
 elif  [[ $1 = "--cyan" ]]; then
 	SH1="#006064"	SH2="#00838F"	SH3="#0097A7"	SH4="#00ACC1"
