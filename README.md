@@ -16,8 +16,17 @@ Sino funciona [entra aqui](https://rpmfusion.org/Configuration)
 	max_parallel_downloads=10
 	fastestmirror=True
 
-## Agregando mas software
+## Agregando Flathub
 Usaremos la guia rapida de Flathub desde: https://flathub.org/home
+
+## Installing snap on Fedora
+
+	sudo dnf install snapd
+
+	sudo ln -s /var/lib/snapd/snap /snap
+After that reboot
+
+	
 
 ### Si estamos usando una spin agregamos lo sig:
 
