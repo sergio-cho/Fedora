@@ -35,9 +35,10 @@ Tienes que crear las carpetas de configuracion y darles permisos
 	+ lxappearance
 	+ brightnessctl
 	+ flameshot
+	+ pavcontrol
 #### Todo en un solo comando:
 
-	sudo dnf install bspwm sxhkd polybar feh rofi picom tilix lxappearance brightnessctl
+	sudo dnf install bspwm sxhkd polybar feh rofi picom tilix lxappearance brightnessctl pavcontrol
 
 Abrimos la aplicacion de archivos y solo arrastramos las carpetas a la carpeta de .config
 
