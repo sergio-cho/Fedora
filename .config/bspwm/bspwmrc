@@ -1,24 +1,11 @@
 #!/usr/bin/sh
 
-#Configs side of monitors BSPWM
-SECOND_MONITOR_SIDE="left"
-
-
-#Get Monitors
-PRINCIPAL=$(xrandr | grep primary | awk '{print $1}')
-SECOND_MONITOR=$(xrandr | grep connected | awk '{i++}i==2'| awk '{print $1}')
+# Iniciar sxhkd
 sxhkd &
 
- Configure Monitors 
-if [ "$(xrandr | grep -sw 'connected' | wc -l)" = "2" ]; then
-  bspc monitor $(bspc query -M | sed -n 1p) -d I II III IV V
-  bspc monitor $(bspc query -M | sed -n 2p) -d VI VII VIII IX X
-  #Set Monitors Side and output 
-  xrandr --output $SECOND_MONITOR --$SECOND_MONITOR_SIDE-of $PRINCIPAL  
-else
-  bspc monitor -d I II III IV V VI VII VIII IX X 
-fi
+# start with bspwm 
 
+xrandr --output DisplayPort-0 --off --output HDMI-A-0 --mode 1440x900 --pos 1600x0 --rotate normal --output DVI-D-0 --mode 1600x900 --pos 0x0 --rotate normal
 
 # Ventanas 
 bspc config border_width         5
@@ -44,7 +31,13 @@ bspc rule -a Screenkey manage=off
 
 # AUTOSTART
 picom &
+# En caso de dunst no se inicie vamos a la ruta de nuestro servicio de notificaciones 
+# en este caso kde : sudo nano /usr/share/dbus-1/services/org.kde.plasma.Notifications.service
+
+#  Agregamos esta linea donde le cambiamos el nombre: Name=org.freedesktop.TestNotifications
+
+# y comentamos la que venia por defecto Name=org.freedesktop.Notifications
 pkill dunst &
-dunst -conf ~/.config/dunst/dunstrc &
+dunst -c ~/.config/dunst/dunstrc &
 feh --bg-scale "/home/dani/Imágenes/Monterey.png" &
 $HOME/.config/polybar/launch.sh &
